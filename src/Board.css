@@ -1,0 +1,23 @@
+.board {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin-left: 2rem;
+  }
+  
+  .board a {
+    margin: 0.1rem 0 0.1rem 2rem;
+    color: white;
+    font-size: 2rem;
+    
+  }
+  
+  @media screen and (min-width: 600px) {
+    .board {
+      justify-content: flex-start;
+      margin-left: 4rem; /* increase the margin-left value */
+    }
+  }
+  
