@@ -22,10 +22,18 @@ function GoogleSignInButton({ clientId, loginUri }) {
       window.google.accounts.id.prompt();
     };
 
-    function handleCredentialResponse(response) {
-      console.log("Encoded JWT ID token: " + response.credential);
-    }
-  }, [clientId]);
+  //   function handleCredentialResponse(response) {
+  //     console.log("Encoded JWT ID token: " + response.credential);
+  //   }
+  // }, [clientId]);
+  function handleCredentialResponse(response) {
+    const credential = response.credential;
+    console.log("Encoded JWT ID token: " + credential);
+  
+    // Redirect the user to your application
+    window.location.href = "/callback?credential=" + encodeURIComponent(credential);
+  }
 
   return <div id="buttonDiv" />;
 }
+export default GoogleSignInButton;
